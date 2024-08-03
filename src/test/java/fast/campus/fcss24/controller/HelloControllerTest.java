@@ -57,6 +57,7 @@ class HelloControllerTest {
         mockMvc.perform(MockMvcRequestBuilders.get("/api/v1/hello")
                 .with(user(User.withUsername("danny.kim")
                         .roles("ADMIN")
+                        .password("12345")
                         .build()))
         ).andExpect(status().isOk());
     }
